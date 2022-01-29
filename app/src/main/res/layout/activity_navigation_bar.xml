@@ -58,6 +58,7 @@
             android:orientation="vertical">
 
             <LinearLayout
+                android:id="@+id/nav1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/box_decor"
@@ -79,6 +80,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/nav2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
@@ -96,11 +98,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_marginTop="5dp"
-                    android:background="@drawable/simple_text"
+                    android:background="@drawable/image_only"
                     android:orientation="horizontal"></LinearLayout>
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/nav3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
@@ -118,11 +121,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_marginTop="5dp"
-                    android:background="@drawable/simple_text"
+                    android:background="@drawable/text_with_image"
                     android:orientation="horizontal"></LinearLayout>
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/nav4"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
@@ -145,6 +149,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/nav5"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="10dp"
@@ -156,20 +161,22 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
-                    android:text="Simple Text" />
+                    android:text="Nav Bar With Dropdown" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_marginTop="5dp"
-                    android:background="@drawable/simple_text"
+                    android:background="@drawable/na_dropdown"
                     android:orientation="horizontal"></LinearLayout>
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/nav6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
                 android:background="@drawable/box_decor"
                 android:orientation="vertical"
                 android:padding="10dp">
@@ -178,13 +185,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="10dp"
-                    android:text="Simple Text" />
+                    android:text="Nav Bar With Search" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_marginTop="5dp"
-                    android:background="@drawable/simple_text"
+                    android:background="@drawable/nav_search"
                     android:orientation="horizontal"></LinearLayout>
             </LinearLayout>
         </LinearLayout>
