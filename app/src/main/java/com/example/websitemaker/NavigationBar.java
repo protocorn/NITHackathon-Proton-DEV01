@@ -54,6 +54,10 @@ public class NavigationBar extends AppCompatActivity {
         binding.nav1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                n_title.setVisibility(View.VISIBLE);
+                n_items.setVisibility(View.GONE);
+                dd_items.setVisibility(View.GONE);
+                img_url.setVisibility(View.GONE);
                 Toast.makeText(NavigationBar.this, "hello", Toast.LENGTH_SHORT).show();
                 dialog.show();
                String navbar_title=n_title.getText().toString();
@@ -102,6 +106,9 @@ public class NavigationBar extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 img_url.setVisibility(View.VISIBLE);
+                n_items.setVisibility(View.GONE);
+                dd_items.setVisibility(View.GONE);
+                n_title.setVisibility(View.VISIBLE);
                 dialog.show();
                 String navbar_title=n_title.getText().toString();
                 String url=img_url.getText().toString();
@@ -109,7 +116,6 @@ public class NavigationBar extends AppCompatActivity {
                 done_btn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        if(!navbar_title.isEmpty() && !url.isEmpty()){
                             code.append("nav class=\"navbar navbar-light bg-light\">\n" +
                                     "  <div class=\"container-fluid\">\n" +
                                     "    <a class=\"navbar-brand\" href=\"#\">\n" +
@@ -119,7 +125,6 @@ public class NavigationBar extends AppCompatActivity {
                                     "</nav>");
                             dialog.dismiss();
                         }
-                    }
                 });
             }
         });
@@ -127,8 +132,10 @@ public class NavigationBar extends AppCompatActivity {
         binding.nav4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                img_url.setVisibility(View.VISIBLE);
+                img_url.setVisibility(View.GONE);
+                dd_items.setVisibility(View.GONE);
                 n_items.setVisibility(View.VISIBLE);
+                n_title.setVisibility(View.VISIBLE);
                 dialog.show();
                 String navbar_title=n_title.getText().toString();
                 String it1=item1.getText().toString();
@@ -139,7 +146,7 @@ public class NavigationBar extends AppCompatActivity {
                 done_btn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        if(!navbar_title.isEmpty() && !it1.isEmpty() && !it2.isEmpty() && !it3.isEmpty()){
+
                             code.append("<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\n" +
                                     "  <div class=\"container-fluid\">\n" +
                                     "    <a class=\"navbar-brand\" href=\"#\">"+navbar_title+"</a>\n" +
@@ -162,7 +169,6 @@ public class NavigationBar extends AppCompatActivity {
                                     "  </div>\n" +
                                     "</nav>");
                             dialog.dismiss();
-                        }
                     }
                 });
             }
@@ -171,9 +177,10 @@ public class NavigationBar extends AppCompatActivity {
         binding.nav5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                img_url.setVisibility(View.VISIBLE);
+                img_url.setVisibility(View.GONE);
                 dd_items.setVisibility(View.VISIBLE);
                 n_items.setVisibility(View.VISIBLE);
+                n_title.setVisibility(View.VISIBLE);
                 dialog.show();
                 String navbar_title=n_title.getText().toString();
                 String count=dropdown_count.getText().toString();
@@ -185,7 +192,6 @@ public class NavigationBar extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         StringBuilder stringBuilder=new StringBuilder();
-                        if(!navbar_title.isEmpty() && !it1.isEmpty() && !it2.isEmpty() && !it3.isEmpty() && !count.isEmpty()){
                             for(int i=0;i<=Integer.parseInt(count);i++){
                                 stringBuilder.append("<li><a class=\"dropdown-item\" href=\"#\">"+"item"+i+"</a></li>\n");
                             }
@@ -214,6 +220,35 @@ public class NavigationBar extends AppCompatActivity {
                                     "        </li>\n" +
                                     "      </ul>\n" +
                                     "    </div>\n" +
+                                    "  </div>\n" +
+                                    "</nav>");
+                            dialog.dismiss();
+                        }
+                });
+            }
+        });
+
+        binding.nav6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.show();
+                n_items.setVisibility(View.GONE);
+                dd_items.setVisibility(View.GONE);
+                img_url.setVisibility(View.GONE);
+                n_title.setVisibility(View.VISIBLE);
+                String navbar_title=n_title.getText().toString();
+
+                done_btn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        if(!navbar_title.isEmpty()){
+                            code.append("<nav class=\"navbar navbar-light bg-light\">\n" +
+                                    "  <div class=\"container-fluid\">\n" +
+                                    "    <a class=\"navbar-brand\">"+navbar_title+"</a>\n" +
+                                    "    <form class=\"d-flex\">\n" +
+                                    "      <input class=\"form-control me-2\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\">\n" +
+                                    "      <button class=\"btn btn-outline-success\" type=\"submit\">Search</button>\n" +
+                                    "    </form>\n" +
                                     "  </div>\n" +
                                     "</nav>");
                             dialog.dismiss();
