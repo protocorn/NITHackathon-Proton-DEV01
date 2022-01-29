@@ -11,7 +11,7 @@
         android:theme="@style/Theme.WebsiteMaker">
         <activity
             android:name=".NavigationBar"
-            android:exported="false" >
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
