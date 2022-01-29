@@ -3,6 +3,7 @@ package com.example.websitemaker;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -16,6 +17,7 @@ import com.example.websitemaker.databinding.ActivityNavigationBarBinding;
 
 public class NavigationBar extends AppCompatActivity {
     ActivityNavigationBarBinding binding;
+    StringBuilder code= new StringBuilder();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +28,6 @@ public class NavigationBar extends AppCompatActivity {
         getSupportActionBar().hide();
 
         String title="Hello";
-        StringBuilder code= new StringBuilder();
         Dialog dialog=new Dialog(NavigationBar.this);
         dialog.setContentView(R.layout.nav_dialogbox);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
@@ -67,6 +68,7 @@ public class NavigationBar extends AppCompatActivity {
                            code.append("<nav class=\"navbar navbar-light bg-light\">\n  <div class=\"container-fluid\">\n" +
                                    " <span class=\"navbar-brand mb-0 h1\">"+navbar_title+"</span>\n  </div> \n </nav>");
                            dialog.dismiss();
+                               nextActivity();
                        }
                    }
                });
@@ -94,6 +96,7 @@ public class NavigationBar extends AppCompatActivity {
                                     "  </div>\n" +
                                     "</nav>");
                             dialog.dismiss();
+                                nextActivity();
                         }
                     }
                 });
@@ -122,6 +125,7 @@ public class NavigationBar extends AppCompatActivity {
                                     "  </div>\n" +
                                     "</nav>");
                             dialog.dismiss();
+                            nextActivity();
                         }
                 });
             }
@@ -166,6 +170,7 @@ public class NavigationBar extends AppCompatActivity {
                                     "  </div>\n" +
                                     "</nav>");
                             dialog.dismiss();
+                            nextActivity();
                     }
                 });
             }
@@ -221,7 +226,9 @@ public class NavigationBar extends AppCompatActivity {
                                     "  </div>\n" +
                                     "</nav>");
                             dialog.dismiss();
-                        }
+                        nextActivity();
+
+                    }
                 });
             }
         });
@@ -250,11 +257,16 @@ public class NavigationBar extends AppCompatActivity {
                                     "  </div>\n" +
                                     "</nav>");
                             dialog.dismiss();
+                            nextActivity();
                         }
                     }
                 });
             }
         });
-
+    }
+    private void nextActivity() {
+        Intent intent=new Intent(NavigationBar.this,MainActivity.class);
+        intent.putExtra("code", (CharSequence) code);
+        startActivity(intent);
     }
 }
