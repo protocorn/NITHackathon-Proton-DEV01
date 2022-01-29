@@ -30,7 +30,7 @@ public class NavigationBar extends AppCompatActivity {
         Dialog dialog=new Dialog(NavigationBar.this);
         dialog.setContentView(R.layout.nav_dialogbox);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
-        //dialog.setCancelable(true);
+        dialog.setCancelable(true);
 
         EditText n_title,img_url,item1,item2,item3,dropdown_count;
         LinearLayout n_items,dd_items;
@@ -58,12 +58,11 @@ public class NavigationBar extends AppCompatActivity {
                 n_items.setVisibility(View.GONE);
                 dd_items.setVisibility(View.GONE);
                 img_url.setVisibility(View.GONE);
-                Toast.makeText(NavigationBar.this, "hello", Toast.LENGTH_SHORT).show();
                 dialog.show();
-               String navbar_title=n_title.getText().toString();
                done_btn.setOnClickListener(new View.OnClickListener() {
                    @Override
                    public void onClick(View view) {
+                       String navbar_title=n_title.getText().toString();
                        if(!navbar_title.isEmpty()){
                            code.append("<nav class=\"navbar navbar-light bg-light\">\n  <div class=\"container-fluid\">\n" +
                                    " <span class=\"navbar-brand mb-0 h1\">"+navbar_title+"</span>\n  </div> \n </nav>");
@@ -81,12 +80,11 @@ public class NavigationBar extends AppCompatActivity {
                 img_url.setVisibility(View.VISIBLE);
                 n_title.setVisibility(View.GONE);
                 dialog.show();
-                String navbar_title=n_title.getText().toString();
-                String url=img_url.getText().toString();
 
                 done_btn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        String url=img_url.getText().toString();
                         if(!url.isEmpty()){
                             code.append("<nav class=\"navbar navbar-light bg-light\">\n" +
                                     "  <div class=\"container\">\n" +
@@ -110,12 +108,12 @@ public class NavigationBar extends AppCompatActivity {
                 dd_items.setVisibility(View.GONE);
                 n_title.setVisibility(View.VISIBLE);
                 dialog.show();
-                String navbar_title=n_title.getText().toString();
-                String url=img_url.getText().toString();
 
                 done_btn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        String navbar_title=n_title.getText().toString();
+                        String url=img_url.getText().toString();
                             code.append("nav class=\"navbar navbar-light bg-light\">\n" +
                                     "  <div class=\"container-fluid\">\n" +
                                     "    <a class=\"navbar-brand\" href=\"#\">\n" +
@@ -137,15 +135,14 @@ public class NavigationBar extends AppCompatActivity {
                 n_items.setVisibility(View.VISIBLE);
                 n_title.setVisibility(View.VISIBLE);
                 dialog.show();
-                String navbar_title=n_title.getText().toString();
-                String it1=item1.getText().toString();
-                String it2=item2.getText().toString();
-                String it3=item3.getText().toString();
-
 
                 done_btn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        String navbar_title=n_title.getText().toString();
+                        String it1=item1.getText().toString();
+                        String it2=item2.getText().toString();
+                        String it3=item3.getText().toString();
 
                             code.append("<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\n" +
                                     "  <div class=\"container-fluid\">\n" +
@@ -182,17 +179,18 @@ public class NavigationBar extends AppCompatActivity {
                 n_items.setVisibility(View.VISIBLE);
                 n_title.setVisibility(View.VISIBLE);
                 dialog.show();
-                String navbar_title=n_title.getText().toString();
-                String count=dropdown_count.getText().toString();
-                String it1=item1.getText().toString();
-                String it2=item2.getText().toString();
-                String it3=item3.getText().toString();
 
                 done_btn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        String navbar_title=n_title.getText().toString();
+                        String count=dropdown_count.getText().toString();
+                        String it1=item1.getText().toString();
+                        String it2=item2.getText().toString();
+                        String it3=item3.getText().toString();
+                        Toast.makeText(NavigationBar.this, navbar_title, Toast.LENGTH_SHORT).show();
                         StringBuilder stringBuilder=new StringBuilder();
-                            for(int i=0;i<=Integer.parseInt(count);i++){
+                            for(int i=1;i<=Integer.valueOf(count);i++){
                                 stringBuilder.append("<li><a class=\"dropdown-item\" href=\"#\">"+"item"+i+"</a></li>\n");
                             }
                             code.append("<nav class=\"navbar navbar-expand-lg navbar-light bg-light\">\n" +
@@ -236,11 +234,11 @@ public class NavigationBar extends AppCompatActivity {
                 dd_items.setVisibility(View.GONE);
                 img_url.setVisibility(View.GONE);
                 n_title.setVisibility(View.VISIBLE);
-                String navbar_title=n_title.getText().toString();
 
                 done_btn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        String navbar_title=n_title.getText().toString();
                         if(!navbar_title.isEmpty()){
                             code.append("<nav class=\"navbar navbar-light bg-light\">\n" +
                                     "  <div class=\"container-fluid\">\n" +
