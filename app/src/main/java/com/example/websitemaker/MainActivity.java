@@ -30,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
 
         binding.vertical.setOnLongClickListener(longClickListener);
 
+        binding.webLayout.setOnDragListener(dragListener);
+
     }
     View.OnLongClickListener longClickListener=new View.OnLongClickListener() {
         @Override
